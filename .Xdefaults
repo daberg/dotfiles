@@ -96,8 +96,8 @@ URxvt.saveLines:              50
 
 ! Fonts
 URxvt.allow_bold:             true
-URxvt.boldFont:               xft:Monospace:pixelsize=20
-URxvt.font:                   xft:Monospace:pixelsize=20
+URxvt.boldFont:               xft:Monospace:pixelsize=15
+URxvt.font:                   xft:Monospace:pixelsize=15
 
 ! Fix font space
 URxvt.letterSpace:            -1

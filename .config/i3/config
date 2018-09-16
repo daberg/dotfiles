@@ -232,3 +232,16 @@ exec --no-startup-id feh --no-fehbg --bg-fill --geometry "+0-325" ~/.config/wall
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id xfce4-power-manager
+
+#----------------------------------------------------------------------------#
+#                              dbdesk specific                               #
+#----------------------------------------------------------------------------#
+
+# Turn off nasty terminal bell
+exec --no-startup-id xset b off
+
+# Startup applications
+exec --no-startup-id ~/.config/unlock-keepassxc.sh
+exec --no-startup-id nextcloud
+exec --no-startup-id telegram-desktop
+exec --no-startup-id thunderbird

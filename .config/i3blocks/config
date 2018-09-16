@@ -26,34 +26,37 @@ interval=30
 [iface]
 command=~/.config/i3blocks/scripts/iface
 label= 
+instance=enp0s16f1u1
 interval=10
 separator_block_width=20
 
-[wifi]
-command=~/.config/i3blocks/scripts/wifi
-instance=wlp1s0
-label= 
-interval=10
-separator_block_width=20
+#[wifi]
+#command=~/.config/i3blocks/scripts/wifi
+#instance=wlp1s0
+#label=
+#interval=10
+#separator_block_width=20
 
 [bandwidth]
 command=~/.config/i3blocks/scripts/bandwidth
+instance=enp0s16f1u1
 interval=5
+
 
 [load_average]
 command=~/.config/i3blocks/scripts/load_average
 label= 
 interval=10
 
-[battery]
-command=~/.config/i3blocks/scripts/battery
-interval=60
+#[battery]
+#command=~/.config/i3blocks/scripts/battery
+#interval=60
 
-[light]
-command=~/.config/i3blocks/scripts/light
-label= 
-interval=5
-signal=11
+#[light]
+#command=~/.config/i3blocks/scripts/light
+#label= 
+#interval=5
+#signal=11
 
 [volume]
 command=~/.config/i3blocks/scripts/volume
