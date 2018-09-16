@@ -1,0 +1,54 @@
+#!/bin/bash
+# Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
+# Copyright (C) 2014 Alexander Keller <github@nycroth.com>
+# Copyright (C) 2018 daberg
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# ALSA primary card
+MIXER="default"
+
+# The instance option sets the control to report and configure
+# This defaults to the default control of your selected mixer
+# For a list of the available, use `amixer -D $Your_Mixer scontrols`
+SCONTROL="${BLOCK_INSTANCE:-$(amixer -D $MIXER scontrols |
+    sed -n "s/Simple mixer control '\([A-Za-z ]*\)',0/\1/p" |
+    head -n1
+)}"
+
+# Step to change the volume by (and units to display)
+STEP="5%"
+
+case $BLOCK_BUTTON in
+  3) amixer -q -D $MIXER sset $SCONTROL toggle ;;  # right click, mute/unmute
+  4) amixer -q -D $MIXER sset $SCONTROL ${STEP}+ unmute ;; # scroll up, increase
+  5) amixer -q -D $MIXER sset $SCONTROL ${STEP}- unmute ;; # scroll down, decrease
+esac
+
+STATE=$(amixer -D $MIXER sget $SCONTROL | grep 'Right:' | awk -F'[][]' '{ print $2 " " $4 }')
+
+if [[ "$(echo $STATE | cut -d" " -f2)" == "off" ]]; then
+    echo "  "
+else
+    PERC=$(echo $STATE | cut -d" " -f1)
+    NUM=$(echo $PERC | cut -d"%" -f1)
+
+    if [ "$NUM" -eq 0 ]; then
+        echo " $PERC"
+    elif [ "$NUM" -lt 50 ]; then
+        echo " $PERC"
+    else
+        echo " $PERC"
+    fi
+fi
