@@ -1,0 +1,76 @@
+#!/usr/bin/perl
+#
+# Copyright 2014 Pierre Mavro <deimos@deimos.fr>
+# Copyright 2014 Vivien Didelot <vivien@didelot.org>
+# Copyright 2018 daberg
+#
+# Licensed under the terms of the GNU GPL v3, or any later version.
+
+use strict;
+use warnings;
+use utf8;
+
+my $acpi;
+my $status;
+my $percent;
+my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
+my $time;
+
+#open(ACPI, "acpi -b | grep 'Battery $bat_number' |") or die;
+open(ACPI, "acpi -b | grep 'Battery' | grep -m 1 -v 'Unknown' |") or die;
+$acpi = <ACPI>;
+close(ACPI);
+
+if ($acpi !~ /: (\w+), (\d+)%/) {
+	die "$acpi\n";
+}
+
+$status = $1;
+$percent = $2;
+
+if ($acpi =~ /(\d\d:\d\d):/) {
+	$time = " $1";
+}
+
+if ($status eq 'Charging') {
+    if ($percent eq '100') {
+        print " ${percent}%\n";
+        print " ${percent}%\n";
+    }
+    else {
+        print " ${percent}% ${time}\n";
+        print " ${percent}% ${time}\n";
+    }
+}
+elsif ($status eq 'Discharging') {
+	if ($percent < 15)
+    {
+        print " ${percent}% ${time}\n";
+        print " ${percent}% ${time}\n";
+		print "#BF616A\n";
+	}
+    elsif ($percent < 25)
+    {
+        print " ${percent}% ${time}\n";
+        print " ${percent}% ${time}\n";
+		print "#D08770\n";
+	}
+    elsif ($percent < 60)
+    {
+        print " ${percent}% ${time}\n";
+        print " ${percent}% ${time}\n";
+        print "#EBCB8B\n";
+	}
+    elsif ($percent < 80)
+    {
+        print " ${percent}% ${time}\n";
+        print " ${percent}% ${time}\n";
+	}
+    else
+    {
+        print " ${percent}% ${time}\n";
+        print " ${percent}% ${time}\n";
+    }
+}
+
+exit(0);

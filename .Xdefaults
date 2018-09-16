@@ -1,0 +1,126 @@
+!-----------------------------Color settings----------------------------------!
+
+! Nord palette
+! https://github.com/arcticicestudio/nord
+! All rights belong to Arctic Ice Studio
+!
+! nord0:   #2e3440
+! nord1:   #3b4252
+! nord2    #434c5e
+! nord3:   #4c566a
+! nord4:   #d8dee9
+! nord5:   #e5e9f0
+! nord6:   #eceff4
+! nord7:   #8fbcbb
+! nord8:   #88c0d0
+! nord9:   #81a1c1
+! nord10:  #5e81ac
+! nord11:  #bf616a
+! nord12:  #d08770
+! nord13:  #ebcb8b
+! nord14:  #a3be8c
+! nord15:  #b48ead
+
+! Black
+! Normal: nord1
+! Bright: nord3
+*color0:  #3b4252
+*color8:  #4c566a
+
+! Red
+! Normal: nord11
+! Bright: nord11
+*color1:  #bf616a
+*color9:  #bf616a
+
+! Green
+! Normal: nord14
+! Bright: nord14
+*color2:  #a3be8c
+*color10: #a3be8c
+
+! Yellow
+! Normal: nord13
+! Bright: nord13
+*color3:  #ebcb8b
+*color11: #ebcb8b
+
+! Blue
+! Normal: nord9
+! Bright: nord9
+*color4:  #81a1c1
+*color12: #81a1c1
+
+! Magenta
+! Normal: nord15
+! Bright: nord15
+*color5:  #b48ead
+*color13: #b48ead
+
+! Cyan
+! Normal: nord8
+! Bright: nord7
+*color6:  #88c0d0
+*color14: #8fbcbb
+
+! White
+! Normal: nord5
+! Bright: nord6
+*color7:  #e5e9f0
+*color15: #eceff4
+
+! Background: nord0
+*background:  #2e3440
+
+! Foreground: nord4
+*foreground:  #d8dee9
+
+! Cursor color: nord4
+*cursorColor: #d8dee9
+
+! Fade color: nord3
+*fadeColor: #4c566a
+
+! Fading percentage
+*fading: 35
+
+!-----------------------------Urxvt settings----------------------------------!
+
+! Graphics
+URxvt.depth:                  32
+URxvt.geometry:               90x30
+URxvt.internalBorder:         10
+URxvt.lineSpace:              0
+URxvt.loginShell:             true
+URxvt.saveLines:              50
+
+! Fonts
+URxvt.allow_bold:             true
+URxvt.boldFont:               xft:Monospace:pixelsize=20
+URxvt.font:                   xft:Monospace:pixelsize=20
+
+! Fix font space
+URxvt.letterSpace:            -1
+
+! Scrollbar
+URxvt.scrollBar:              false
+URxvt.scrollStyle:            rxvt
+
+! Perl extensions
+URxvt.perl-ext-common:        default,matcher,clipboard
+URxvt.matcher.button:         1
+URxvt.urlLauncher:            firefox
+
+! Clipboard bindings
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+! Turn off ISO 14755
+URxvt.iso14755:               false
+
+! Cursor
+URxvt.cursorBlink:            false
+URxvt.cursorUnderline:        false
+
+! Pointer
+URxvt.pointerBlank:           true
