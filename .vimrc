@@ -46,3 +46,7 @@ autocmd BufEnter .vimrc colorscheme elflord
 
 " Force .md files to be recognized as Markdown files
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Compile shortcut for Tex files
+autocmd FileType tex inoremap <F5> <Esc>:!latexmk -pdf<space><c-r>%<Enter>a
+autocmd FileType tex nnoremap <F5> :!latexmk -pdf<space><c-r>%<Enter>
