@@ -166,10 +166,11 @@ bar {
 }
 
 # Application behaviour
-for_window [class="laverna"]       move container to workspace 8
-for_window [class="Telegram"]      move container to workspace 9
-for_window [class="Thunderbird"]   move container to workspace 9
-for_window [class="Keepassx"]      move container to workspace 10
+for_window [class="laverna"]     move container to workspace 8
+for_window [class="Telegram"]    move container to workspace 9
+for_window [class="Thunderbird"] move container to workspace 9
+for_window [class="Keepassx"]    move container to workspace 10
+for_window [class="keepassxc"]   move container to workspace 10
 
 # Scratchpad terminal settings
 for_window [instance="scratchterm"] floating enable
@@ -177,7 +178,8 @@ for_window [instance="scratchterm"] resize set 800 600
 for_window [instance="scratchterm"] move scratchpad
 for_window [instance="scratchterm"] border pixel 5
 
-bindsym $mod+u [instance="scratchterm"] scratchpad show; [instance="scratchterm"] move position center
+bindsym $mod+u [instance="scratchterm"] scratchpad show; [instance="scratchterm"]; resize set 800 600; [instance="scratchterm"] move position center
+bindsym $mod+Shift+u [instance="scratchterm"] scratchpad show; [instance="scratchterm"]; resize set 1280 1024; [instance="scratchterm"] move position center
 
 exec --no-startup-id urxvt -name scratchterm
 
