@@ -205,22 +205,4 @@ bindsym $mod+p exec --no-startup-id pcmanfm
 bindsym Print  exec --no-startup-id gnome-screenshot --interactive
 
 # Background
-<<<<<<< Updated upstream
-exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/wallpaper
-=======
 exec --no-startup-id feh --no-fehbg --bg-fill --geometry "+0-325" ~/.config/wallpaper
-
-#----------------------------------------------------------------------------#
-#                              dbdesk specific                               #
-#----------------------------------------------------------------------------#
-
-# Turn off nasty terminal bell
-exec --no-startup-id xset b off
-
-# Startup applications
-exec --no-startup-id keepassx2
-exec --no-startup-id laverna
-exec --no-startup-id nextcloud
-exec --no-startup-id telegram-desktop
-exec --no-startup-id thunderbird
->>>>>>> Stashed changes
