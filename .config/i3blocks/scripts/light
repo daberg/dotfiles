@@ -1,0 +1,11 @@
+#!/bin/bash
+
+STEP=5
+
+case $BLOCK_BUTTON in
+  4) light -A $STEP ;;
+  5) light -U $STEP ;;
+esac
+
+echo $(light | cut -d. -f1)"%"
+echo $(light | cut -d. -f1)"%"

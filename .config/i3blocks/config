@@ -52,7 +52,7 @@ interval=10
 
 [light]
 label=
-command=echo $(light | cut -d. -f1)"%"
+command=~/.config/i3blocks/scripts/light
 interval=5
 signal=11
 
