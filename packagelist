@@ -5,6 +5,7 @@ gnome-keyring
 i3-gaps
 i3blocks
 libsecret
+light-git
 lightdm-webkit-theme-litarvan
 lightdm-webkit2-greeter
 network-manager
