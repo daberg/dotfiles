@@ -1,4 +1,5 @@
 alacritty
+arc-gtk-theme
 conky
 dunst
 gnome-keyring
@@ -9,6 +10,7 @@ light-git
 lightdm-webkit-theme-litarvan
 lightdm-webkit2-greeter
 network-manager
+papirus-icon-theme
 qt5-styleplugins
 qutebrowser
 ranger
@@ -17,7 +19,6 @@ rxvt-unicode
 rxvt-unicode-terminfo
 screenfetch
 sdcv
-sdcv (stardict)
 tmux
 ttf-dejavu
 ttf-font-awesome-4
