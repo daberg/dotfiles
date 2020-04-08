@@ -232,3 +232,33 @@ exec --no-startup-id feh --no-fehbg --bg-fill --geometry "+0-325" ~/.config/wall
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id xfce4-power-manager
+
+#-----------------------------------------------------------------------------#
+#                                dbezb settings                               #
+#-----------------------------------------------------------------------------#
+
+# Manjaro stuff
+bindsym $mod+z exec --no-startup-id morc_menu
+bindsym $mod+b exec --no-startup-id alacritty -e bmenu
+
+# Bindings for volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%    && exec pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%    && exec pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   0 toggle && exec pkill -SIGRTMIN+10 i3blocks
+
+# Bindings for brightness control
+bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 5 && exec pkill -SIGRTMIN+11 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 && exec pkill -SIGRTMIN+11 i3blocks
+
+# Touchpad / mouse replacement
+# Mod+m left click
+# Mod+, right click
+# Mod+. middle click
+bindcode --release $mod+58 exec --no-startup-id xdotool click 1
+bindcode --release $mod+59 exec --no-startup-id xdotool click 3
+bindcode --release $mod+60 exec --no-startup-id xdotool click 2
+
+# Startup applications
+exec --no-startup-id caffeine
+exec --no-startup-id nextcloud
+exec --no-startup-id pamac-tray
